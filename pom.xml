@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>gwt-plug</name>
+    <groupId>com.josephalevin.gwtplug</groupId>
+    <artifactId>gwt-plug</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <organization>
+        <name>Joseph A. Levin</name>
+        <url>http://www.josephalevin.com</url>
+    </organization>
+    
+    <developers>
+        <developer>
+            <id>josephalevin</id>
+            <name>Joseph A. Levin</name>
+            <email>josephalevin@gmail.com</email>
+            <roles>
+                <role>lead</role>
+                <role>architect</role>
+                <role>code poet</role>
+            </roles>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <jdk.source>1.6</jdk.source>
+        <jdk.target>1.6</jdk.target>
+
+        <!--
+        Dependency version for easy adjustment across all modules.
+        -->
+        <gwt.version>2.2.0</gwt.version>
+
+        <!--
+        plugin versions
+        -->
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>2.4.3</maven-resources-plugin.version>
+        <gwt-maven-plugin.version>2.2.0</gwt-maven-plugin.version>              
+
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        
+        
+    </properties>
+
+    <build>
+        <plugins>
+            <!--
+            Java compiler
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            
+            <!--
+            GWT Compiler
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt-maven-plugin.version}</version>
+                <configuration>                    
+                    <encoding>${encoding}</encoding>                    
+                </configuration>
+                <executions>
+                    <execution>                        
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+          
+        </plugins>
+    </build>
+
+    <dependencies>
+       <!--
+       Google Web Toolkit dependencies
+       -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+        </dependency>
+    </dependencies>
+    
+    <!-- 
+    Artifact repositories
+    -->
+    <repositories>
+
+        <repository>
+            <id>public</id>
+            <name>public</name>
+            <url>http://crumb.josephalevin.com:88/artifacts/content/groups/public/</url>            
+        </repository>
+                      
+    </repositories>
+
+   
+</project>
