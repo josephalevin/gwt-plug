@@ -9,6 +9,6 @@ package com.josephalevin.gwtplug.client;
  *
  * @author josephalevin
  */
-public interface ExtensionLoader <E> extends Iterable<E>{
+public interface ExtensionLoader <E> /*extends Iterable<E>*/{
     
 }
