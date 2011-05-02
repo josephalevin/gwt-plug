@@ -7,12 +7,12 @@
     <!-- Specify the paths for translatable code                    -->
     <source path="gwtplug/client"/>    
     
-<!--    <define-linker name="admod" class="com.josephalevin.gwtplug.rebind.AdvertisedModuleLinker" />
-    <add-linker name="admod"/>-->
+    <super-source path="jre" />
     
-<!--    <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
+    <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
         <when-type-assignable class="com.josephalevin.gwtplug.client.ServiceLoaderLookup"/>
-    </generate-with>-->
+    </generate-with>
 
-    <define-configuration-property name="gwtplug.advertised" is-multi-valued="false" />    
+    <define-configuration-property name="gwtplug.advertised" is-multi-valued="false" />
+    <define-configuration-property name="gwtplug.advertisements" is-multi-valued="true" />
 </module>

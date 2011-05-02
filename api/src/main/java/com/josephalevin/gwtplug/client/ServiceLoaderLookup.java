@@ -5,10 +5,12 @@
 
 package com.josephalevin.gwtplug.client;
 
+import java.util.Iterator;
+
 /**
  *
  * @author josephalevin
  */
-public interface ServiceLoaderLookup {
-    public String sayHello();
+public interface ServiceLoaderLookup{    
+    public <S> Iterator<S> lookup(Class<S> service);
 }

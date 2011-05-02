@@ -5,10 +5,17 @@
 
 package com.josephalevin.gwtplug.sample.impl.client;
 
+import com.josephalevin.gwtplug.sample.api.client.Animal;
+
 /**
  *
  * @author josephalevin
  */
-public class SomethingToGrab {
+public class Dog implements Animal{
+
+    @Override
+    public String speak() {
+        return "woof";
+    }
 
 }
