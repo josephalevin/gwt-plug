@@ -23,7 +23,7 @@
 
 More details coming soon.
 
-![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)
+[![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
 
 [Link](https://www.ohloh.net/p/gwt-plug?ref=github)
 
