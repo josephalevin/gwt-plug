@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module>
+    <!-- Inherit the core Web Toolkit stuff.                        -->
+    <inherits name="com.google.gwt.user.User"/>
+	
+    <!-- Specify the paths for translatable code                    -->
+    <source path="gwtplug/client"/>    
+    
+<!--    <define-linker name="admod" class="com.josephalevin.gwtplug.rebind.AdvertisedModuleLinker" />
+    <add-linker name="admod"/>-->
+    
+<!--    <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
+        <when-type-assignable class="com.josephalevin.gwtplug.client.ServiceLoaderLookup"/>
+    </generate-with>-->
+
+    <define-configuration-property name="gwtplug.advertised" is-multi-valued="false" />    
+</module>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.josephalevin.gwtplug</groupId>
+        <artifactId>gwtplug-sample</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+
+    <groupId>com.josephalevin.gwtplug</groupId>
+    <artifactId>gwtplug-sample-basic</artifactId>
+    <name>gwtplug-sample-basic</name>
+    <packaging>war</packaging>
+
+    <build>
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <plugins>
+            
+            <plugin>
+                <groupId>com.josephalevin.gwtplug</groupId>
+                <artifactId>gwtplug-maven-plugin</artifactId>
+                <version>0.1-SNAPSHOT</version>
+                <configuration>
+                    <createModule>com.josephalevin.gwtplug.sample.gwtplug</createModule>                   
+                </configuration>
+                <executions>
+                    <execution>                       
+                        <goals>
+                            <goal>inherit</goal>
+                        </goals>                        
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
+            Java compiler
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+           
+           <!--
+            GWT Compiler
+            -->
+            <plugin>              
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt-maven-plugin.version}</version>
+                <configuration>                    
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <copyWebapp>true</copyWebapp>
+                    <runTarget>index.html</runTarget>
+                    <encoding>${encoding}</encoding>
+                    <appEngineVersion>${gae.version}</appEngineVersion>
+                    <compileReport>true</compileReport>                      
+                </configuration>
+                <executions>                	
+                    <execution>                        
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            
+
+<!--            
+            Resources
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>-->
+           
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gwtplug-api</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gwtplug-sample-plugin-impl</artifactId>
+        </dependency>        
+        
+                
+    </dependencies>
+
+
+   
+</project>
