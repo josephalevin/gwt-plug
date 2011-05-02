@@ -23,5 +23,5 @@
 
 More details coming soon.
 
-<script type="text/javascript" src="http://www.ohloh.net/p/535919/widgets/project_users.js"></script>
+!(https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)
 
