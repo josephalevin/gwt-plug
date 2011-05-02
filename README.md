@@ -23,5 +23,5 @@
 
 More details coming soon.
 
-!(https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)
+![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)
 
