@@ -23,10 +23,5 @@
 
 More details coming soon.
 
-<h1>
-Hello
-</h1>
-
-<html>
 <script type="text/javascript" src="http://www.ohloh.net/p/535919/widgets/project_users.js"></script>
-</html>
+
