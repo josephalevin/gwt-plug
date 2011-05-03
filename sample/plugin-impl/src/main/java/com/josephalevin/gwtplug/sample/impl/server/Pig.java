@@ -1,4 +1,6 @@
 /**
+ * This file is released under the MIT License.
+ *
  * Copyright (c) 2011 Joseph A. Levin <josephalevin@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package com.josephalevin.gwtplug.sample.impl.server;
 
 import com.josephalevin.gwtplug.sample.api.client.Animal;
