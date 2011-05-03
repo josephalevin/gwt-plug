@@ -23,10 +23,10 @@
 
 More details coming soon.
 
-##Support Continued Development
-[![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
+##Support Continued Open Source Development
+This project is a hobby, but I hope it find a useful place in your GWT software stack.  If you Have found gwt-plug useful in your projects please, consider making a coffee donation.  
 
-Have you found gwt-plug useful in your projects?   Please, consider making a coffee donation.
+[![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
 
 [![Donate](https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7H7GLGKSELVJQ)
 
