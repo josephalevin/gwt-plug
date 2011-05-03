@@ -20,6 +20,9 @@
     THE SOFTWARE.
 -->
 # Google Web Toolkit Plugin Framework
+##Problem
+
+##Solution
 
 More details coming soon.
 
