@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     Copyright © 2010-2011 Joseph A. Levin <josephalevin@gmail.com>
@@ -22,19 +21,18 @@
     THE SOFTWARE.
 
 -->
-<module>
-    <!-- Inherit the core Web Toolkit stuff.                        -->
-    <inherits name="com.google.gwt.user.User"/>
-	
-    <!-- Specify the paths for translatable code                    -->
-    <source path="gwtplug/client"/>    
-    
-    <super-source path="gwtplug/jre" />
-    
-    <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
-        <when-type-assignable class="com.josephalevin.gwtplug.client.ServiceLoaderLookup"/>
-    </generate-with>
+# Google Web Toolkit Plugin Framework
+##Problem
 
-    <define-configuration-property name="gwtplug.advertised" is-multi-valued="false" />
-    <define-configuration-property name="gwtplug.advertisements" is-multi-valued="true" />
-</module>
+##Solution
+
+More details coming soon.
+
+##Support Continued Open Source Development
+This project is a hobby, but I hope it will fill an essential need in your GWT software stack.  If you Have found gwt-plug useful in your projects please, consider making a coffee donation.  Thank you.
+
+[![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
+
+[![Donate](https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7H7GLGKSELVJQ)
+
+
