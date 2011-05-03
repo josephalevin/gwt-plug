@@ -27,9 +27,10 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.josephalevin.gwtplug.client.ServiceLoader;
 import com.josephalevin.gwtplug.sample.api.client.Animal;
 import java.util.Iterator;
-import java.util.ServiceLoader;
+
 
 
 /**

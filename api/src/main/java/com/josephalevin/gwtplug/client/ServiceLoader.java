@@ -19,10 +19,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package java.util;
+package com.josephalevin.gwtplug.client;
 
 import com.google.gwt.core.client.GWT;
-import com.josephalevin.gwtplug.client.ServiceLoaderLookup;
+import java.util.Iterator;
 
 /**
  *
