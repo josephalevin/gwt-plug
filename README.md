@@ -25,7 +25,9 @@ More details coming soon.
 
 ##Support Continued Development
 [![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
-Have you found gwt-plug useful in your projects?  Please, consider making a donation.
+
+Have you found gwt-plug useful in your projects?   Please, consider making a coffee donation.
+
 [![Donate](https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7H7GLGKSELVJQ)
 
 
