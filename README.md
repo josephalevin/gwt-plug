@@ -24,7 +24,7 @@
 More details coming soon.
 
 ##Support Continued Open Source Development
-This project is a hobby, but I hope it will fill an essential need in your GWT software stack.  If you Have found gwt-plug useful in your projects please, consider making a coffee donation.  
+This project is a hobby, but I hope it will fill an essential need in your GWT software stack.  If you Have found gwt-plug useful in your projects please, consider making a coffee donation.  Thank you.
 
 [![Project Statistics](https://www.ohloh.net/p/gwt-plug/widgets/project_partner_badge.gif)](https://www.ohloh.net/p/gwt-plug?ref=github)
 
