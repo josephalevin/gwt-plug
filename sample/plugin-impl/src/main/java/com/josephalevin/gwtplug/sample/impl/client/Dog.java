@@ -11,7 +11,7 @@ import com.josephalevin.gwtplug.sample.api.client.Animal;
  *
  * @author josephalevin
  */
-public class Dog implements Animal{
+public class Dog implements Animal{   
 
     @Override
     public String speak() {

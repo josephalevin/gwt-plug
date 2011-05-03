@@ -7,7 +7,7 @@
     <!-- Specify the paths for translatable code                    -->
     <source path="gwtplug/client"/>    
     
-    <super-source path="jre" />
+    <super-source path="gwtplug/jre" />
     
     <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
         <when-type-assignable class="com.josephalevin.gwtplug.client.ServiceLoaderLookup"/>
