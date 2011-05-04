@@ -55,10 +55,18 @@ public class InheritModulesMojo extends MvnInjectableMojoSupport {
 
     @MojoComponent
     protected ArtifactMetadataSource artifactMetadataSource;
+    
     @MojoParameter(required = true)
     private String createModule;
+    
     @MojoParameter(expression = "${project.build.directory}/generated-sources/gwtplug", required = true)
     private java.io.File generateDirectory;
+    
+    @MojoParameter()
+    private String[] advertisements;
+    
+    @MojoParameter(defaultValue="true")
+    private boolean ignoreGoogleGwt;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
@@ -88,14 +96,12 @@ public class InheritModulesMojo extends MvnInjectableMojoSupport {
 
             List<String> advertiedModules = new ArrayList<String>();
             for (File file : modules) {
-//                System.out.println(file.getName());
-//                System.out.println(file.getRelativePath());
 
-                if (file.getRelativePath().startsWith("com/google/gwt")) {
-                    //System.out.println(String.format("Skipping Google Module: %s", file.getRelativePath()));
-                    continue;
+                if(ignoreGoogleGwt){
+                    if (file.getRelativePath().startsWith("com/google/gwt")) {                    
+                        continue;
+                    }
                 }
-//                System.out.println(String.format("Scanning: %s", file.getRelativePath()));
 
                 try {
                     SAXReader sax = new SAXReader(false);
