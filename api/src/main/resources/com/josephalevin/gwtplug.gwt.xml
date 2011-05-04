@@ -31,8 +31,8 @@
     
     <super-source path="gwtplug/jre" />
     
-    <generate-with class="com.josephalevin.gwtplug.rebind.ServiceLoaderLookupGenerator">        
-        <when-type-assignable class="com.josephalevin.gwtplug.client.ServiceLoaderLookup"/>
+    <generate-with class="com.josephalevin.gwtplug.rebind.PluginLookupGenerator">        
+        <when-type-assignable class="com.josephalevin.gwtplug.client.PluginLookup"/>
     </generate-with>
 
     <define-configuration-property name="gwtplug.advertised" is-multi-valued="false" />

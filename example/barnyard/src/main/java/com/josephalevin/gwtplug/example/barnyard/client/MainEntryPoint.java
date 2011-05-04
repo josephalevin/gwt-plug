@@ -27,7 +27,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.josephalevin.gwtplug.client.ServiceLoader;
+import com.josephalevin.gwtplug.client.PluginLoader;
 import com.josephalevin.gwtplug.example.barnyard.api.client.Animal;
 import java.util.Iterator;
 
@@ -47,7 +47,7 @@ public class MainEntryPoint implements EntryPoint{
         final Label speak = new Label("Click an below animal to see it speak:");
         RootPanel.get().add(speak);
                        
-        ServiceLoader<Animal> loader = ServiceLoader.load(Animal.class);                
+        PluginLoader<Animal> loader = PluginLoader.load(Animal.class);             
         
         Iterator<Animal> animals = loader.iterator();
         

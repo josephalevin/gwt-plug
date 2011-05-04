@@ -28,8 +28,8 @@ import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.NotFoundException;
 import com.google.gwt.core.ext.typeinfo.TypeOracle;
-import com.josephalevin.gwtplug.client.ServiceLoaderIterator;
-import com.josephalevin.gwtplug.client.ServiceLoaderLookup;
+import com.josephalevin.gwtplug.client.PluginIterator;
+import com.josephalevin.gwtplug.client.PluginLookup;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -48,14 +48,14 @@ import java.util.Map.Entry;
  *
  * @author josephalevin
  */
-public class ServiceLoaderLookupGenerator extends Generator {
+public class PluginLookupGenerator extends Generator {
 
-    private static final String META_INF_SERVICES = "META-INF/services/";
+    private static final String META_INF_services = "META-INF/services/";
 
     @Override
     public String generate(TreeLogger logger, GeneratorContext context, String typeName) throws UnableToCompleteException {
-        if(!ServiceLoaderLookup.class.getName().equals(typeName)){
-            logger.log(TreeLogger.ERROR, String.format("Do not extend or implement the %s.", ServiceLoaderLookup.class.getName()));
+        if(!PluginLookup.class.getName().equals(typeName)){
+            logger.log(TreeLogger.ERROR, String.format("Do not extend or implement the %s.", PluginLookup.class.getName()));
             throw new UnableToCompleteException();
         }
         
@@ -71,10 +71,10 @@ public class ServiceLoaderLookupGenerator extends Generator {
         if(writer != null){
 
             Map <JClassType, List<JClassType>> lookup = new HashMap<JClassType, List<JClassType>>();
-            for (JClassType service : oracle.getTypes()) {
-                List<JClassType> impls = implementations(logger, oracle, service);
+            for (JClassType plugin : oracle.getTypes()) {
+                List<JClassType> impls = implementations(logger, oracle, plugin);
                 if(impls != null && !impls.isEmpty()){
-                    lookup.put(service, impls);
+                    lookup.put(plugin, impls);
                 }
             }
                         
@@ -89,20 +89,20 @@ public class ServiceLoaderLookupGenerator extends Generator {
             writer.println();
             
             
-            writer.println("public <S> Iterator<S> lookup(Class<S> service){");
+            writer.println("public <S> Iterator<S> lookup(Class<S> plugin){");
             
-            //loop over each service type and map to the iterator
+            //loop over each plugin type and map to the iterator
             for(Entry<JClassType, List<JClassType>> entry : lookup.entrySet()){
-                JClassType serviceType = entry.getKey();
+                JClassType pluginType = entry.getKey();
                 List<JClassType> impls = entry.getValue();
                 
-                writer.format("if (service.getName().equals(\"%s\")){", serviceType.getQualifiedBinaryName());
+                writer.format("if (plugin.getName().equals(\"%s\")){", pluginType.getQualifiedBinaryName());
                 writer.println();
                 
-                writer.format("return (Iterator<S>) new %s<%s>(%s){", ServiceLoaderIterator.class.getName(),serviceType.getQualifiedBinaryName(), impls.size());
+                writer.format("return (Iterator<S>) new %s<%s>(%s){", PluginIterator.class.getName(),pluginType.getQualifiedBinaryName(), impls.size());
                 writer.println();
                 
-                writer.format("public %s get (int index){", serviceType.getQualifiedBinaryName());
+                writer.format("public %s get (int index){", pluginType.getQualifiedBinaryName());
                 writer.println("switch(index){");
                 for(int i = 0; i < impls.size(); i++){
                     writer.format("case %s: return new %s();", i, impls.get(i).getQualifiedBinaryName());
@@ -134,7 +134,7 @@ public class ServiceLoaderLookupGenerator extends Generator {
 
     private List<JClassType> implementations(TreeLogger logger, TypeOracle oracle, JClassType type){
         try{
-            Enumeration<URL> i = ClassLoader.getSystemResources(META_INF_SERVICES + type.getQualifiedBinaryName());
+            Enumeration<URL> i = ClassLoader.getSystemResources(META_INF_services + type.getQualifiedBinaryName());
             List<JClassType> result = new ArrayList<JClassType>();
             while (i.hasMoreElements()) {
                 URL url = i.nextElement();
@@ -158,7 +158,7 @@ public class ServiceLoaderLookupGenerator extends Generator {
                         }
                     }            
                 } catch (IOException ioe) {
-                    logger.log(TreeLogger.Type.WARN, "Unable to load service definitions", ioe);                
+                    logger.log(TreeLogger.Type.WARN, "Unable to load plugin definitions", ioe);                
                 } finally {
                     if (reader != null) {
                         try {
@@ -172,7 +172,7 @@ public class ServiceLoaderLookupGenerator extends Generator {
             return result;
         }
         catch (IOException ioe){
-            logger.log(TreeLogger.Type.WARN, "Unable to load service definitions", ioe);   
+            logger.log(TreeLogger.Type.WARN, "Unable to load plugin definitions", ioe);   
             return Collections.emptyList();
         }
     }

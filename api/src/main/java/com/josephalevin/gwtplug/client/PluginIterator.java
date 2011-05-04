@@ -21,46 +21,41 @@
  */
 package com.josephalevin.gwtplug.client;
 
-import com.google.gwt.core.client.GWT;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  *
  * @author Joseph A. Levin <josephalevin@gmail.com>
  */
-public final class ServiceLoader <S> implements Iterable<S>{
-    private final Class<S> service;
-    
-    private static final ServiceLoaderLookup lookup = GWT.create(ServiceLoaderLookup.class);
-    
-    private ServiceLoader(Class<S> service) {
-        this.service = service;
-    }
-    
-    @Override
-    public Iterator<S> iterator(){
-        return lookup.lookup(service);
-    }
-    
-    public static <S> ServiceLoader<S> load(Class<S> service){
-        return new ServiceLoader<S>(service);
-    }
-     
-    
-    
-    public static <S> ServiceLoader<S> loadInstalled(Class<S> service){
-        return new ServiceLoader<S>(service);
-    }    
+public abstract class PluginIterator <S> implements Iterator<S> {
 
-     /**
-     * Returns a string describing this service.
-     *
-     * @return  A descriptive string
-     */
-    @Override
-    public String toString() {
-	return "java.util.ServiceLoader[" + service.getName() + "]";
+        private final int size;
+        private int index = 0;
+        public PluginIterator(int size) {
+            this.size = size;            
+        }
+        
+        protected abstract S get(int index);
+
+        @Override
+        public boolean hasNext() {
+            return index < size;
+        }
+
+        @Override
+        public S next() {
+            if(!hasNext()){
+                throw new NoSuchElementException();
+            }
+            S result = get(index);
+            index++;
+            return result;
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+        
     }
-    
-    
-}

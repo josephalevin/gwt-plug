@@ -21,12 +21,45 @@
  */
 package com.josephalevin.gwtplug.client;
 
+import com.google.gwt.core.client.GWT;
 import java.util.Iterator;
 
 /**
  *
- * @author josephalevin
+ * @author Joseph A. Levin <josephalevin@gmail.com>
  */
-public interface ServiceLoaderLookup{    
-    public <S> Iterator<S> lookup(Class<S> service);
+public final class PluginLoader <P> implements Iterable<P>{
+    private final Class<P> plugin;
+    
+    private static final PluginLookup lookup = GWT.create(PluginLookup.class);
+    
+    private PluginLoader(Class<P> plugin) {
+        this.plugin = plugin;
+    }
+    
+    @Override
+    public Iterator<P> iterator(){
+        return lookup.lookup(plugin);
+    }
+    
+    public Class<P> getPluginType(){
+        return plugin;
+    }
+    
+    public static <S> PluginLoader<S> load(Class<S> service){
+        return new PluginLoader<S>(service);
+    }        
+     
+
+     /**
+     * Returns a string describing this service.
+     *
+     * @return  A descriptive string
+     */
+    @Override
+    public String toString() {
+	return PluginLoader.class.getName() + "[" +  plugin.getName() + "]";
+    }
+    
+    
 }
