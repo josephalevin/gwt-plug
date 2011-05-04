@@ -138,7 +138,8 @@ public class InheritModulesMojo extends MvnInjectableMojoSupport {
             for (String mod : advertiedModules) {
                 buffer.append(String.format("<inherits name=\"%s\"/>", mod));
             }
-            buffer.append("</module>");            
+            buffer.append("</module>");  
+            buffer.append("\n");
             FileWriter writer = null;
             try {
                 writer = new FileWriter(file);

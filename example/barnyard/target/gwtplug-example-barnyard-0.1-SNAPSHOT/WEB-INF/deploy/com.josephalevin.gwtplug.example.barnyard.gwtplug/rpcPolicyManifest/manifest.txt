@@ -1,0 +1,2 @@
+# Module com.josephalevin.gwtplug.example.barnyard.gwtplug
+# RPC service class, partial path of RPC policy file

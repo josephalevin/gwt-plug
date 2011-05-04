@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module><inherits name="com.josephalevin.gwtplug.example.barnyard.dog"/><inherits name="com.josephalevin.gwtplug.example.barnyard.pig"/><inherits name="com.josephalevin.gwtplug.example.barnyard.cow"/></module>
