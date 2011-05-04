@@ -1,10 +1,1 @@
-/target/
-/api/target/
-/gwtplug-api/target/
-/samples/basic/target/
-/samples/plugin-api/target/
-/samples/plugin-impl/target/
-/sample/basic/target/
-/sample/plugin-api/target/
-/sample/plugin-impl/target/
-/maven/target/
+target/
