@@ -19,47 +19,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.josephalevin.gwtplug.client;
 
-import com.google.gwt.core.client.GWT;
-import java.util.Iterator;
+package java.util;
 
-/**
- *
- * @author Joseph A. Levin <josephalevin@gmail.com>
- */
-public final class PluginLoader <P> implements Iterable<P>{
-    private final Class<P> plugin;
-    
-    private static final PluginLookup lookup = GWT.create(PluginLookup.class);
-    
-    private PluginLoader(Class<P> plugin) {
-        this.plugin = plugin;
+import com.josephalevin.gwtplug.client.PluginLoader;
+
+
+
+
+public final class ServiceLoader<S> implements Iterable<S>
+{
+
+    // The class or interface representing the service being loaded
+    private Class<S> service;
+
+    private ServiceLoader(Class<S> service) {
+	this.service = service;
     }
-    
+       
+   
+    public static <S> ServiceLoader<S> load(Class<S> service) {	
+	return new ServiceLoader<S>(service);
+    }
+
     @Override
-    public Iterator<P> iterator(){
-        return lookup.lookup(plugin);
-    }
-    
-    public Class<P> getPluginType(){
-        return plugin;
-    }
-    
-    public static <S> PluginLoader<S> load(Class<S> plugin){
-        return new PluginLoader<S>(plugin);
+    public Iterator<S> iterator() {
+        PluginLoader<S> loader = PluginLoader.load(service);
+        return loader.iterator();
     }        
-     
+    
 
-     /**
-     * Returns a string describing this service.
-     *
-     * @return  A descriptive string
-     */
     @Override
     public String toString() {
-	return PluginLoader.class.getName() + "[" +  plugin.getName() + "]";
+	return "java.util.ServiceLoader[" + service.getName() + "]";
     }
-    
-    
+
 }
