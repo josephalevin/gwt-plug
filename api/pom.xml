@@ -17,6 +17,7 @@
 
     <build>
         <plugins>
+            
             <!--
             Java compiler
             -->
@@ -26,35 +27,8 @@
                 <configuration>
                     <proc>none</proc>
                 </configuration>
-            </plugin>
-           
-            <!--
-            GWT Compiler
-            -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt-maven-plugin.version}</version>
-                <configuration>                    
-                    <encoding>${encoding}</encoding>                    
-                </configuration>
-                <executions>
-                    <execution>                        
-                        <goals>
-                            <goal>resources</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-<!--            
-            Resources
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-            </plugin>-->
-           
+            </plugin>            
+          
         </plugins>
     </build>
 

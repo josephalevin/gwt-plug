@@ -48,10 +48,7 @@
     </build>
 
     <dependencies>
-       <!--
-       Google Web Toolkit dependencies
-       -->
-        
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>gwtplug-api</artifactId>

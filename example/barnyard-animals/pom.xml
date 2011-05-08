@@ -18,15 +18,7 @@
         <module>dog</module>
         <module>cow</module>
         <module>pig</module>                
-    </modules>
-    
-<!--    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>gwtplug-example-barnyard-dog</artifactId>
-            <version>${project.version}</version>
-        </dependency>  
-    </dependencies>-->
+    </modules>    
        
 </project>
 

@@ -22,31 +22,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-           
-           <!--
-            GWT Compiler
-            -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt-maven-plugin.version}</version>
-                <configuration>
-                    <encoding>${encoding}</encoding>
-                    <compileReport>true</compileReport>  
-                </configuration>
-                <executions>
-                    <execution>                        
-                        <goals>                            
-                            <goal>resources</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            </plugin>          
          
         </plugins>
-    </build>
-
-    <dependencies></dependencies>
+    </build>   
    
 </project>

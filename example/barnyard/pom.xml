@@ -14,9 +14,9 @@
     <name>gwtplug-example-barnyard</name>
     <packaging>war</packaging>
     
-  	<properties>
+    <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-	</properties>
+    </properties>
 
     <build>
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
